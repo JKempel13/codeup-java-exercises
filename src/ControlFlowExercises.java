@@ -1,6 +1,7 @@
 
 
 import java.util.Scanner;
+import java.util.jar.JarOutputStream;
 
 public class ControlFlowExercises {
     public static void main(String[] args) {
@@ -14,6 +15,11 @@ public class ControlFlowExercises {
         Assume that the user will enter valid data.
         Only continue if the user agrees to.*/
 
+
+        String yesOrNo = "Y";
+
+        while (yesOrNo.equalsIgnoreCase("y")) {
+
         System.out.println("What number would you like to go up to?");
         int num = Integer.parseInt(input.nextLine());
         System.out.println("Here is your table!");
@@ -25,17 +31,11 @@ public class ControlFlowExercises {
         for(int i = 1; i <= num; i++) {
             int j = i * i;
             int k = i * i * i;
-            System.out.printf("%s      | %s       | %s     %n", i, j, k);
-            if (i == 4) {
-                System.out.println("Do you wish to continue?");
-                String yesOrNo = input.nextLine();
-                if (yesOrNo.equals("no")) {
-                    break;
-                } else {
-                    continue;
-                }
-            }
+            System.out.printf("%-6d | %-7d | %-5d%n", i, j, k);
         }
-
+            System.out.println("Do you wish to continue? Y/N");
+            yesOrNo = input.nextLine();
+        }
+        System.out.println("Ok, have a good day");
     }
 }
