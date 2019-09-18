@@ -7,35 +7,28 @@ public class ControlFlowExercises {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        /*3. Display a table of powers.
+do {
+    System.out.println("Give me a grade number: ");
+    int grade = Integer.parseInt(input.nextLine());
 
-        Prompt the user to enter an integer.
-        Display a table of squares and cubes from 1 to the value entered.
-        Ask if the user wants to continue.
-        Assume that the user will enter valid data.
-        Only continue if the user agrees to.*/
+    String gradeLetter = "";
+    if (grade <= 100 && grade >= 88) {
+        gradeLetter = "A";
+    } else if (grade <= 87 && grade >= 80) {
+        gradeLetter = "B";
+    } else if (grade <= 79 && grade >= 67) {
+        gradeLetter = "C";
+    } else if (grade <= 66 && grade >= 60) {
+        gradeLetter = "D";
+    } else if (grade <= 59 && grade >= 0) {
+        gradeLetter = "F";
+    }
 
+    System.out.println(gradeLetter);
+        System.out.println("Would you like to try another grade number? Y/N");
+} while(input.nextLine().equalsIgnoreCase("y"));
 
-        String yesOrNo = "Y";
+        System.out.println("Ok, have a good day!");
 
-        while (yesOrNo.equalsIgnoreCase("y")) {
-
-        System.out.println("What number would you like to go up to?");
-        int num = Integer.parseInt(input.nextLine());
-        System.out.println("Here is your table!");
-
-        System.out.println("\nnumber | squared | cubed");
-        System.out.println("------ | ------- | ----- ");
-
-
-        for(int i = 1; i <= num; i++) {
-            int j = i * i;
-            int k = i * i * i;
-            System.out.printf("%-6d | %-7d | %-5d%n", i, j, k);
-        }
-            System.out.println("Do you wish to continue? Y/N");
-            yesOrNo = input.nextLine();
-        }
-        System.out.println("Ok, have a good day");
     }
 }
