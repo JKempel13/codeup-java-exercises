@@ -1,8 +1,12 @@
-import java.util.Scanner;
-
 public class StringExercise {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+
+        String cat = "cat";
+
+        String catNoC = cat.substring(1, cat.indexOf("t") + 1);
+        String catPigLatin = catNoC + "cay";
+
+        System.out.println(catPigLatin);
 
 //        String message = "We don't need no education \nWe don't need no thought control";
 
