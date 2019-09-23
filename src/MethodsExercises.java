@@ -1,6 +1,7 @@
 import jdk.swing.interop.SwingInterOpUtils;
 import org.w3c.dom.ls.LSOutput;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class MethodsExercises {
@@ -15,14 +16,23 @@ public class MethodsExercises {
 
 //        int userNum = getInteger(1,10);
 
-        String yesOrNo = "y";
+        //======= part of factorial method==========//
+        /*String yesOrNo = "y";
         do {
             factorial(0, sc);
             System.out.println("Would you like to try another number? Y/N");
             yesOrNo = sc.nextLine();
 
-        }while (yesOrNo.equalsIgnoreCase("Y"));
+        }while (yesOrNo.equalsIgnoreCase("Y"));*/
 
+        String yesOrNo = "y";
+        do {
+            dice();
+            diceGame(1, 6,sc);
+            System.out.println("\nWould you like to try another number? Y/N");
+            yesOrNo = sc.nextLine();
+
+        }while (yesOrNo.equalsIgnoreCase("Y"));
 
     }
 
@@ -48,7 +58,7 @@ public class MethodsExercises {
     }*/
 
     // =====================EXERCISE 2==========================//
-    public static int getInteger(int min, int max) {
+    /*public static int getInteger(int min, int max) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a number between 1 and 10: ");
         if (sc.hasNextInt()) {
@@ -62,19 +72,10 @@ public class MethodsExercises {
           System.out.println("Invalid input");
         }
         return getInteger(min,max);
-//        int userInput = sc.nextInt();
-//        if (userInput >= min && userInput <=max) {
-//            System.out.println("Valid number entered");
-//            return userInput;
-//        } else {
-//            System.out.println("invalid number");
-//            return getInteger(min, max);
-//        }
-
-    }
+    }*/
 
     // =====================EXERCISE 3======================//
-        public static long factorial(int num, Scanner sc) {
+    /*public static long factorial(int num, Scanner sc) {
 
             int input = getInteger(1, 10);
             long Factorial = 1;
@@ -83,32 +84,25 @@ public class MethodsExercises {
             }
             System.out.printf("\n%d! = %d\n", input, Factorial);
             return Factorial;
-        }
-    // get valid int
-//    public static int getValidInt() {
-//        Scanner sc = new Scanner(System.in);
-//        while (true) {
-//            if (sc.hasNextInt()) {
-//                return sc.nextInt();
-//            } else {
-//                System.out.println("Invalid input!");
-//                sc.nextLine();
-//            }
-//        }
-//    }
+        }*/
 
+    // ===================EXERCISE 4=======================//
+    public static void dice() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How many sides?");
+        int sides = sc.nextInt();
+    }
 
-    // get valid int in range
-/*    public static int getInt(int min, int max) {
-        while (true) {
-            System.out.println("Please enter a number between " + min + " and " + max);
-            int userNum = getValidInt();
-            if (userNum >= min && userNum <= max) {
-                return userNum;
-            } else {
-                System.out.println("Number out of range!");
-            }
-        }
-    }*/
+    public static int diceGame (int min, int max, Scanner sc) {
+        Random diceRoll = new Random();
+        System.out.println("Are you ready to roll the dice? Y/N");
+        String roll = sc.nextLine();
+        int die1=(int)(Math.random()*6+1);
+        int die2=(int)(Math.random()*6+1);
+        int sum= die1 + die2;
+
+        System.out.printf("You rolled a %s and a %s", die1, die2);
+        return sum;
+    }
 }
 
