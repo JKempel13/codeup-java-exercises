@@ -1,10 +1,8 @@
 package util;
 
-
 import java.util.Scanner;
 
 public class Input {
-
     private Scanner scanner;
 
     public Input () {
@@ -12,50 +10,44 @@ public class Input {
     }
 
     public String getString() {
-        System.out.println("enter a string");
-        return scanner.nextLine();
+        System.out.println("Type something here:");
+        return this.scanner.nextLine();
     }
 
     public boolean yesNo() {
-        System.out.println("Y/N");
-        String input = scanner.nextLine();
-
+        System.out.println("Type Y/N or yes/no");
+        String input = this.scanner.nextLine();
         return input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes");
     }
 
     public int getInt(int min, int max) {
-
-        int input;
-
-        do {
-            System.out.println("enter an integer between" + min + "and" + max);
-            input = scanner.nextInt();
-        } while(input <= min || input >= max);
-
-        return input;
+        int number = getInt();
+        if(number >= min && number <= max) {
+            return number;
+        } else {
+            System.out.println("out of range, try again");
+            return getInt(min,max);
+        }
     }
 
     public int getInt() {
-        System.out.println("enter an integer again");
-        return scanner.nextInt();
+        System.out.println("Enter a number:");
+        return Integer.parseInt(this.scanner.nextLine());
     }
 
     public double getDouble (double min, double max) {
-        double input;
-
-        do {
-            System.out.println("enter an integer between" + min + "and" + max);
-            input = scanner.nextDouble();
-        } while(input <= min || input >= max);
-
-        return input;
+        double number = getDouble("enter a decimal:");
+        if(number >= min && number <= max) {
+            return number;
+        } else {
+            System.out.println("out of range, try again");
+            return getDouble(min,max);
+        }
     }
 
-    public double getDouble() {
-        System.out.println("another double digit number please");
-        return scanner.nextDouble();
+    public double getDouble(String prompt) {
+        System.out.println(prompt);
+        return Double.parseDouble(this.scanner.nextLine());
     }
-
-
 
 }

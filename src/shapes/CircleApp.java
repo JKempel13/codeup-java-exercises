@@ -2,17 +2,12 @@ package shapes;
 
 import util.Input;
 
-
 public class CircleApp {
 
     public static void main(String[] args) {
-    Input test = new Input();
-    Circle circle = new Circle();
-
-        System.out.println();
-
-    System.out.println(circle.getArea());
-    System.out.println(circle.getCircumference());
-
+    Input input = new Input();
+    Circle circle = new Circle(input.getDouble("Give me the radius:"));
+        System.out.println("Circumference = " + circle.getCircumference());
+        System.out.println("Area = " + circle.getArea());
     }
 }

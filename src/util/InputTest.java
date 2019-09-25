@@ -9,8 +9,7 @@ public class InputTest {
         System.out.println(input.getInt(1,10));
         System.out.println(input.getInt());
         System.out.println(input.getDouble(1, 10));
-        System.out.println(input.getDouble());
-
+        System.out.println(input.getDouble("enter a decimal:"));
 
     }
 }
