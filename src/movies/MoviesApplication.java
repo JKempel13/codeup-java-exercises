@@ -2,12 +2,12 @@ package movies;
 
 import util.Input;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class MoviesApplication {
 
     public static Movie[] movieList = MoviesArray.findAll();
-    public static Movie[] categoryList = MoviesArray.findAll();
 
     public static void main(String[] args) {
         Input input = new Input();
@@ -22,15 +22,45 @@ public class MoviesApplication {
                 "\n" +
                 "Enter your choice: ");
 
-//        System.out.println(input.getInt());
+        int user = input.getInt();
 
-        if(input.getInt() == 1) {
+        if(user == 1) {
             for (Movie currentMovie : movieList) {
                 System.out.println(currentMovie.getName());
-//                System.out.println(currentMovie.getCategory());
+                System.out.println(currentMovie.getCategory());
             }
-        } else if (input.getInt() == 2) {
+        } else if (user == 2) {
+            for (Movie currentMovie : movieList) {
+                if (currentMovie.getCategory().equalsIgnoreCase("animated")) {
+                    System.out.println(currentMovie.getName());
+                    System.out.println(currentMovie.getCategory());
+                }
+            }
+        } else if (user == 3) {
+            for (Movie currentMovie : movieList) {
+                if (currentMovie.getCategory().equalsIgnoreCase("drama")) {
+                    System.out.println(currentMovie.getName());
+                    System.out.println(currentMovie.getCategory());
+                }
+            }
+        } else if (user == 4) {
+            for (Movie currentMovie : movieList) {
+                if (currentMovie.getCategory().equalsIgnoreCase("horror")) {
+                    System.out.println(currentMovie.getName());
+                    System.out.println(currentMovie.getCategory());
+                }
+            }
+        } else if (user == 5) {
+            for (Movie currentMovie : movieList) {
+                if (currentMovie.getCategory().equalsIgnoreCase("scifi")) {
+                    System.out.println(currentMovie.getName());
+                    System.out.println(currentMovie.getCategory());
+                }
+            }
         }
+    }
+    static void addMovie() {
+        Movie[] addMovie = Arrays.copyOf(movieList, movieList.length + 1);
     }
 }
 
