@@ -22,46 +22,45 @@ public class MoviesApplication {
                 "\n" +
                 "Enter your choice: ");
 
-        int user = input.getInt();
+        int userNumChoice = input.getInt(0, 5);
 
-        if(user == 1) {
+       if (userNumChoice == 1) {
             for (Movie currentMovie : movieList) {
                 System.out.println(currentMovie.getName());
-                System.out.println(currentMovie.getCategory());
             }
-        } else if (user == 2) {
+       } else if (userNumChoice == 2) {
             for (Movie currentMovie : movieList) {
                 if (currentMovie.getCategory().equalsIgnoreCase("animated")) {
                     System.out.println(currentMovie.getName());
-                    System.out.println(currentMovie.getCategory());
                 }
             }
-        } else if (user == 3) {
+       } else if (userNumChoice == 3) {
             for (Movie currentMovie : movieList) {
                 if (currentMovie.getCategory().equalsIgnoreCase("drama")) {
                     System.out.println(currentMovie.getName());
-                    System.out.println(currentMovie.getCategory());
                 }
             }
-        } else if (user == 4) {
+       } else if (userNumChoice == 4) {
             for (Movie currentMovie : movieList) {
                 if (currentMovie.getCategory().equalsIgnoreCase("horror")) {
                     System.out.println(currentMovie.getName());
-                    System.out.println(currentMovie.getCategory());
                 }
             }
-        } else if (user == 5) {
+       } else if (userNumChoice == 5) {
             for (Movie currentMovie : movieList) {
                 if (currentMovie.getCategory().equalsIgnoreCase("scifi")) {
                     System.out.println(currentMovie.getName());
-                    System.out.println(currentMovie.getCategory());
                 }
             }
-        }
+       } else {
+            System.out.println("Ok, thank you, have a good day!");
+       }
     }
-    static void addMovie() {
+
+    static void addMovie(){
         Movie[] addMovie = Arrays.copyOf(movieList, movieList.length + 1);
     }
 }
+
 
 
