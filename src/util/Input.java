@@ -10,7 +10,6 @@ public class Input {
     }
 
     public String getString() {
-        System.out.println("Type something here:");
         return this.scanner.nextLine();
     }
 
@@ -30,12 +29,20 @@ public class Input {
         }
     }
 
+//    Integer.valueOf(String s);
+//    Double.valueOf(String s);
     public int getInt() {
         System.out.println("Enter a number:");
-        return Integer.parseInt(this.scanner.nextLine());
+        try{
+            return Integer.parseInt(getString());
+        } catch (NumberFormatException e) {
+            System.out.println("That is not a number");
+//            e.printStackTrace();
+            return getInt();
+        }
     }
 
-    public double getDouble (double min, double max) {
+    double getDouble (double min, double max) {
         double number = getDouble("enter a decimal:");
         if(number >= min && number <= max) {
             return number;
@@ -44,10 +51,24 @@ public class Input {
             return getDouble(min,max);
         }
     }
-
     public double getDouble(String prompt) {
         System.out.println(prompt);
-        return Double.parseDouble(this.scanner.nextLine());
+        try {
+            return Double.parseDouble(this.scanner.nextLine());
+        } catch (NumberFormatException e){
+            e.printStackTrace();
+        }
+        return getDouble(prompt);
     }
+
+//    public static String getBinary (String binary) {
+//        try{
+//            int i = Integer.parseInt(binary,2);
+//            System.out.println("Integer value: " + i);
+//        } catch(Exception e){
+//            e.printStackTrace();
+//        }
+//        return binary;
+//    }
 
 }
