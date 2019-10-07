@@ -21,7 +21,7 @@ public class Parent extends FamilyMember {
     }
 
     void sayHelloMom() {
-        System.out.println("\nHi, I am the Mom in the " + super.getLastName() + " family, " + super.getFirstName() + ".");
+        System.out.println("\nHi, I am the Mom in the " + super.getLastName() + " family, " + super.getFirstName() + ".\n");
     }
 
 }

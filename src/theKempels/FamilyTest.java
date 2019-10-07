@@ -21,9 +21,6 @@ public class FamilyTest {
         kids.add(new FamilyMember(8, "Kempel", "Jason Jr."));
         kids.add(new FamilyMember(17, "Favela", "Julian"));
 
-        for(FamilyMember kid : kids){
-            System.out.println(kid.getFirstName());
-        }
     }
 
 }

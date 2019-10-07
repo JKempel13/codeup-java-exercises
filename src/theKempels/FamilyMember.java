@@ -1,9 +1,9 @@
 package theKempels;
 
 public class FamilyMember {
-    private int age;
-    private String lastName;
-    private String firstName;
+    int age;
+    String lastName;
+    String firstName;
 
     FamilyMember(int age, String lastName, String firstName) {
         this.age = age;
